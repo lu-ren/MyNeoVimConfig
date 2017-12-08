@@ -29,7 +29,7 @@ let g:neoterm_position='vertical'
 set tags=tags;
 
 "NERDTree
-silent! nmap <C-p> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 silent! map <F3> :NERDTreeFind<CR>
 let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
@@ -37,12 +37,11 @@ let g:NERDTreeMapPreview="<F4>"
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
 
+"highlight disable
+map <C-h> :nohlsearch<CR>
+
 "Vim-Sneak
 let g:sneak#streak=1
-
-"IndentLine
-let g:indentLine_leadingSpaceEnabled=1
-let g:indentLine_leadingSpaceChar='.'
 
 "Airline settings
 set laststatus=2

@@ -1,7 +1,3 @@
-[submodule "ctrlp"]
-	path = bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
-
 [submodule "deoplete"]
 	path = bundle/deoplete.vim
 	url = https://github.com/Shougo/deoplete.nvim.git
@@ -33,3 +29,11 @@
 [submodule "nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+
+[submodule "fzf"]
+	path = bundle/fzf
+	url = https://github.com/junegunn/fzf.git
+
+[submodule "fzf.vim"]
+	path = bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git

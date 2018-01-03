@@ -19,6 +19,7 @@ set tabstop=4       " The width of a TAB is set to 4.
 set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expands tabs to spaces
+
 set termguicolors
 
 execute pathogen#infect()
@@ -40,11 +41,15 @@ nmap <F8> :TagbarToggle<CR>
 "highlight disable
 map <C-h> :nohlsearch<CR>
 
-"Vim-Sneak
-let g:sneak#streak=1
+"ctrlp to fzf
+map <C-p>f :FZF<CR>
+map <C-p>b :Buffer<CR>
+
+"Disable line number in term
+au TermOpen * setlocal nonumber norelativenumber
 
 "Airline settings
 set laststatus=2
 "Vim colorschemes
 set background=dark
-colo gruvbox
+colo spacegray

@@ -30,6 +30,7 @@ call dein#add('junegunn/fzf.vim', {'build': './install', 'rtp': ''})
 call dein#add('vim-airline/vim-airline')
 call dein#add('juntinmk/vim-sneak')
 call dein#add('tpope/vim-surround')
+call dein#add('scrooloose/nerdtree')
 
 :set number
 :set guioptions=c

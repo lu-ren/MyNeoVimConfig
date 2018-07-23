@@ -1,6 +1,36 @@
+"Dein plugin manager setup
+if &compatible
+    set nocompatible
+endif
+" Add the dein installation directory into runtimepath
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+
+if dein#load_state('~/.cache/dein')
+    call dein#begin('~/.cache/dein')
+
+    call dein#add('~/.cache/dein')
+    call dein#add('Shougo/deoplete.nvim')
+    if !has('nvim')
+        call dein#add('roxma/nvim-yarp')
+        call dein#add('roxma/vim-hug-neovim-rpc')
+    endif
+
+    call dein#end()
+    call dein#save_state()
+endif
+
 filetype on
 filetype plugin indent on
 syntax on
+
+"Plugins list starts here
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('junegunn/fzf', {'depends': 'fzf'})
+call dein#add('junegunn/fzf.vim', {'build': './install', 'rtp': ''})
+call dein#add('vim-airline/vim-airline')
+call dein#add('juntinmk/vim-sneak')
+call dein#add('tpope/vim-surround')
+
 :set number
 :set guioptions=c
 :set noincsearch "Cursor does not jump at search highlighting
@@ -22,8 +52,6 @@ set expandtab       " Expands tabs to spaces
 
 set termguicolors
 
-execute pathogen#infect()
-
 let g:neoterm_position='vertical'
 
 "ctags setup
@@ -34,6 +62,8 @@ map <C-n> :NERDTreeToggle<CR>
 silent! map <F3> :NERDTreeFind<CR>
 let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
+
+:set ic "Case insensitive
 
 "Tagbar
 nmap <F8> :TagbarToggle<CR>

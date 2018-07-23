@@ -1,36 +1,22 @@
-"Dein plugin manager setup
-if &compatible
-    set nocompatible
-endif
-" Add the dein installation directory into runtimepath
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-
-if dein#load_state('~/.cache/dein')
-    call dein#begin('~/.cache/dein')
-
-    call dein#add('~/.cache/dein')
-    call dein#add('Shougo/deoplete.nvim')
-    if !has('nvim')
-        call dein#add('roxma/nvim-yarp')
-        call dein#add('roxma/vim-hug-neovim-rpc')
-    endif
-
-    call dein#end()
-    call dein#save_state()
-endif
-
-filetype on
-filetype plugin indent on
-syntax on
-
 "Plugins list starts here
-call dein#add('Shougo/deoplete.nvim')
-call dein#add('junegunn/fzf', {'depends': 'fzf'})
-call dein#add('junegunn/fzf.vim', {'build': './install', 'rtp': ''})
-call dein#add('vim-airline/vim-airline')
-call dein#add('juntinmk/vim-sneak')
-call dein#add('tpope/vim-surround')
-call dein#add('scrooloose/nerdtree')
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.local/share/nvim/plugged')
+
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-surround'
+Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/denite.nvim'
+
+call plug#end()
 
 :set number
 :set guioptions=c

@@ -14,7 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'Shougo/deoplete.nvim'
-Plug 'Shougo/denite.nvim' { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 
 
 call plug#end()

@@ -17,7 +17,7 @@ Plug 'tpope/vim-surround'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'leafgarland/typescript-vim'
-Plug 'tpope/vim-commentary.git'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 

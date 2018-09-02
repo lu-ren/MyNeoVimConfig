@@ -11,6 +11,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'Shougo/deoplete.nvim'
@@ -81,6 +82,7 @@ au TermOpen * setlocal nonumber norelativenumber
 
 "Airline settings
 set laststatus=2
+let g:airline_theme="angr"
 "Vim colorschemes
 set background=dark
-colo hybrid
+colo jellybeans

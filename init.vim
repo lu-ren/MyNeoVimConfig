@@ -16,6 +16,7 @@ Plug 'tpope/vim-surround'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'leafgarland/typescript-vim'
+Plug 'tpope/vim-commentary.git'
 
 call plug#end()
 
@@ -82,4 +83,4 @@ au TermOpen * setlocal nonumber norelativenumber
 set laststatus=2
 "Vim colorschemes
 set background=dark
-colo spacegray
+colo hybrid

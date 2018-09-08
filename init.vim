@@ -10,6 +10,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'justinmk/vim-sneak'
@@ -18,6 +20,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-commentary'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -80,9 +83,13 @@ command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-hea
 "Disable line number in term
 au TermOpen * setlocal nonumber norelativenumber
 
+"Goyo and Limelight settings
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
 "Airline settings
 set laststatus=2
 let g:airline_theme="angr"
 "Vim colorschemes
 set background=dark
-colo jellybeans
+colo gruvbox

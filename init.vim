@@ -21,6 +21,7 @@ Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-commentary'
 Plug 'morhetz/gruvbox'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -87,9 +88,12 @@ au TermOpen * setlocal nonumber norelativenumber
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
+"Git-gutter settings
+set updatetime=100
+
 "Airline settings
 set laststatus=2
-let g:airline_theme="angr"
+let g:airline_theme="gruvbox"
 "Vim colorschemes
 set background=dark
 colo gruvbox

@@ -10,6 +10,7 @@ Plug 'tpope/vim-commentary'
 Plug 'morhetz/gruvbox'
 Plug 'airblade/vim-gitgutter'
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 :set number

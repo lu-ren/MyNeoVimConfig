@@ -11,6 +11,7 @@ Plug 'morhetz/gruvbox'
 Plug 'airblade/vim-gitgutter'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'mattn/emmet-vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 call plug#end()
 
 :set number
@@ -36,19 +37,7 @@ set termguicolors
 
 let g:neoterm_position='vertical'
 
-"ctags setup
-set tags=tags;
-
-"NERDTree
-map <C-n> :NERDTreeToggle<CR>
-silent! map <F3> :NERDTreeFind<CR>
-let g:NERDTreeMapActivateNode="<F3>"
-let g:NERDTreeMapPreview="<F4>"
-
 :set ic "Case insensitive
-
-"Tagbar
-nmap <F8> :TagbarToggle<CR>
 
 "highlight disable
 map <C-h> :nohlsearch<CR>
@@ -79,4 +68,17 @@ set updatetime=100
 set laststatus=2
 "Vim colorschemes
 set background=dark
-colo hybrid
+colo gruvbox
+
+"Tree sitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+  indent = {
+      enable = true,
+  },
+}
+EOF
